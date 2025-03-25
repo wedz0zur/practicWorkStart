@@ -1,0 +1,66 @@
+<div class="row">
+  <div class="rol-6">
+    1. interpolation
+    <p>{{ firstName }}</p>
+
+    <div>
+      {{ rollNo }}
+    </div>
+
+    <span>
+      {{ isActive }}
+    </span>
+  </div>
+  <div class="col-6">
+    <input type="text" [value]="firstName" />
+    <br />
+    <input type="text" [placeholder]="myPlaceholder" />
+    <br />
+    <div [class]="divClassName" style="height: 100px; width: 100px">Изменить класс стиля</div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-3">
+    <button class="btn btn-success" (click)="editClassName()">+</button>
+    <button (click)="showWelcomeMessage()">Сообщение</button>
+
+  </div>
+  <div class="col-3">
+    <select (change)="onCitychanges()">
+      <option value="">Pune</option>
+      <option value="">Nagpur</option>
+      <option value="">Mumbai</option>
+      <option value="">Panji</option>
+    </select>
+  </div>
+</div>
+{{firstName2}}
+<div class="row">
+  <div class="col-3">
+    <input type="text" [(ngModel)]="firstName2">
+  </div>
+</div>
+
+<div class="col-3">
+  <select  [(ngModel)]="selectedCity">
+    <option value="Pune">Pune</option>
+    <option value="Nagpur">Nagpur</option>
+    <option value="Mumbai">Mumbai</option>
+    <option value="Panji">Panji</option>
+  </select>
+  {{selectedCity}}
+</div>
+
+
+
+
+
+
+
+
+
+<h1>NG IF РАССМАТРИВАЕМ</h1>
+
+<app-ngif></app-ngif>
+
+
