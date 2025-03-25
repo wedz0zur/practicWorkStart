@@ -5,3 +5,94 @@
 .bg-green{
   color: green;
 }
+
+.row {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.col-6, .col-3 {
+  padding: 15px;
+  background-color: white;
+  border-radius: 5px;
+  margin: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+input[type="text"], select {
+  width: 100%;
+  padding: 8px 12px;
+  margin: 8px 0;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus, select:focus {
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,0.25);
+}
+
+.btn {
+  padding: 8px 16px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-success {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
+
+button:not(.btn) {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:not(.btn):hover {
+  background-color: #0069d9;
+}
+
+[class*="col-"] {
+  margin-bottom: 15px;
+}
+
+p, span, div {
+  margin: 8px 0;
+  padding: 8px;
+  background-color: #e9ecef;
+  border-radius: 4px;
+}
+
+h1 {
+  padding: 15px;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.div-style-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px auto;
+  border: 1px dashed #333;
+}
