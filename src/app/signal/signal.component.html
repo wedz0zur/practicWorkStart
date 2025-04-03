@@ -1,18 +1,21 @@
-<p>
-    {{firstName()}}
-    {{lastName()}}
-</p>
 
-<p>
-    <input type="text" [value]="lastName()">
-</p>
-
-<p>
-    {{courseName}}
-</p>
-
-<p>
-    {{rollNo()}}
-</p>
-
-<button (click)="onIncrement()">Изменить состояние</button>
+  <div class="container">
+    <p>
+      <span>Имя:</span> {{firstName()}}<br>
+      <span>Фамилия:</span> {{lastName()}}
+    </p>
+  
+    <p>
+      <input type="text" [value]="lastName()" placeholder="Фамилия">
+    </p>
+  
+    <p>
+      <span>Курс:</span> {{courseName}}
+    </p>
+  
+    <p>
+      <span>Номер:</span> {{rollNo()}}
+    </p>
+  
+    <button (click)="onIncrement()">Изменить состояние</button>
+  </div>

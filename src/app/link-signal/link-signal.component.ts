@@ -17,4 +17,25 @@ export class LinkSignalComponent {
       return fullName;
     },
   });
+
+  user = signal({id: 111, name: 'Chetan'})
+  
+  email = linkedSignal({
+    source: this.user,
+    computation: ((user)=>`${user.name + user.id}@gmail.com`),
+    equal:(a:any, b:any)=> a.id !== b.id
+  })
+
+  changeName(){
+    debugger;
+    this.firstName.set("Джанго")
+    debugger;
+
+  }
+
+  changeId(){
+    debugger
+    this.user.set({id: 123, name: "Chetan"})
+    debugger
+  }
 }
