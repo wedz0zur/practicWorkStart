@@ -10,8 +10,12 @@ import { FormsModule } from "@angular/forms";
 })
 export class NgifComponent {
   div1Visable: boolean = false;
-  number1: string = "";
-  number2: string = "";
+
+  number1: string = '';
+  number2: string = '';
+
+  dayName: string = '';
+
   showDiv1() {
     this.div1Visable = true;
   }

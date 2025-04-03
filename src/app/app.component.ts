@@ -5,11 +5,13 @@ import { NgifComponent } from "./ngif/ngif.component";
 import { NgForComponent } from './ng-for/ng-for.component';
 import { NgClassComponent } from "./ng-class/ng-class.component";
 import { NgStyleComponent } from "./ng-style/ng-style.component";
+import { SignalComponent } from './signal/signal.component';
+import { LinkSignalComponent } from './link-signal/link-signal.component';
 
 
 @Component({
   selector: 'app-root',
-  imports: [FormsModule, NgifComponent, NgForComponent, NgClassComponent, NgStyleComponent],
+  imports: [FormsModule, NgifComponent, NgForComponent, NgClassComponent, NgStyleComponent, SignalComponent, LinkSignalComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
