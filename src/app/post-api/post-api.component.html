@@ -1,0 +1,230 @@
+<h1>Оформление заказа</h1>
+<div class="container">
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Добавление автомобиля</h3>
+    </div>
+    <div class="panel-body">
+      <form action="designer-finish.html" class="form-horizontal" role="form">
+        <div class="form-group">
+          <label for="name" class="col-sm-3 control-label">Тип заказа</label>
+          <div class="col-sm-9">
+            <label class="radio-inline">
+                <input
+                type="text"
+                [(ngModel)]="carObj.carId"
+                [ngModelOptions]="{standalone: true}"
+                id="inlineRadio1"
+                placeholder="Введите ID машины"
+              />
+              
+              <input
+                type="text"
+                [(ngModel)]="carObj.brand"
+                id="inlineRadio1"
+                placeholder="Введите марку"
+                [ngModelOptions]="{standalone: true}"
+              />
+              
+              <input
+                type="text"
+                [(ngModel)]="carObj.model"
+                id="inlineRadio1"
+                placeholder="Введите модель"
+                [ngModelOptions]="{standalone: true}"
+              />
+              
+              <input
+                type="text"
+                [(ngModel)]="carObj.year"
+                id="inlineRadio1"
+                placeholder="Введите год выпуска"
+                [ngModelOptions]="{standalone: true}"
+              />
+              
+              <input
+                type="text"
+                [(ngModel)]="carObj.color"
+                id="inlineRadio1"
+                placeholder="Введите цвет"
+                [ngModelOptions]="{standalone: true}"
+              />
+              
+              <input
+                type="text"
+                [(ngModel)]="carObj.dailyRate"
+                id="inlineRadio1"
+                placeholder="Введите ежедневную ставку"
+                [ngModelOptions]="{standalone: true}"
+              />
+              
+              <input
+                type="text"
+                [(ngModel)]="carObj.carImage"
+                id="inlineRadio1"
+                placeholder="Введите ссылку на изображение"
+                [ngModelOptions]="{standalone: true}"
+              />
+              
+              <input
+                type="text"
+                [(ngModel)]="carObj.regNo"
+                id="inlineRadio1"
+                placeholder="Введите регистрационный номер"
+                [ngModelOptions]="{standalone: true}"
+              />
+              <button (click)="addCar()">Добавить</button>
+              
+            </label>
+            <label class="radio-inline">
+              <input
+                type="radio"
+                name="inlineRadioOptions"
+                id="inlineRadio2"
+                value="option2"
+              />
+              Внешный заказ
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="name" class="col-sm-3 control-label">Буюртмачи</label>
+          <div class="col-sm-9">
+            <input
+              type="text"
+              class="form-control"
+              name="name"
+              id="name"
+              placeholder="Исм ёки корхона номи"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="name" class="col-sm-3 control-label"
+            >Название продукта</label
+          >
+          <div class="col-sm-9">
+            <input
+              type="text"
+              class="form-control"
+              name="name"
+              id="name"
+              placeholder="Название"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="about" class="col-sm-3 control-label">Описание</label>
+          <div class="col-sm-9">
+            <textarea class="form-control"></textarea>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="qty" class="col-sm-3 control-label">Количество</label>
+          <div class="col-sm-3">
+            <input
+              type="text"
+              class="form-control"
+              name="qty"
+              id="qty"
+              placeholder="шт."
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label">Сроки</label>
+          <div class="col-sm-3">
+            <label class="control-label small" for="date_start">Начало: </label>
+            <input
+              type="text"
+              class="form-control"
+              name="date_start"
+              id="date_start"
+              placeholder="Начало"
+            />
+          </div>
+          <div class="col-sm-3">
+            <label class="control-label small" for="date_finish">Конец:</label>
+            <input
+              type="text"
+              class="form-control"
+              name="date_finish"
+              id="date_finish"
+              placeholder="Конец"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="name" class="col-sm-3 control-label">Загрузить</label>
+          <div class="col-sm-3">
+            <label class="control-label small" for="file_img"
+              >Картинка (jpg/png):</label
+            >
+            <input type="file" name="file_img" />
+          </div>
+          <div class="col-sm-3">
+            <label class="control-label small" for="file_img">Файлы:</label>
+            <input type="file" name="file_archive" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="tech" class="col-sm-3 control-label">Технолог</label>
+          <div class="col-sm-3">
+            <select class="form-control">
+              <option value="">Выберите</option>
+              <option value="texnolog2">Технолог 2</option>
+              <option value="texnolog3">Технолог 3</option>
+            </select>
+          </div>
+        </div>
+        <hr />
+        <div class="form-group">
+          <div class="col-sm-offset-3 col-sm-9">
+            <button type="submit" class="btn btn-primary">Отправить</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+</div>
+<div class="row">
+  <div class="col-3">
+    <button (click)="getCars()">Получить список авто</button>
+    <br />
+    <br />
+  </div>
+</div>
+
+<div class="row">
+  <div class="coll-6">
+    <table class="table table-dark table-striped">
+      <thead>
+        <tr>
+          <th>Car No</th>
+          <th>CarId</th>
+          <th>Brand</th>
+          <th>Model</th>
+          <th>Year</th>
+          <th>Color</th>
+          <th>DailyRate</th>
+          <th>RegNo</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (car of carList; track $index){
+        <tr>
+          <td>{{ $index + 1 }}</td>
+          <td>{{ car.carId }}</td>
+          <td>{{ car.brand }}</td>
+          <td>{{ car.model }}</td>
+          <td>{{ car.year }}</td>
+          <td>{{ car.color }}</td>
+          <td>{{ car.dailyRate }}</td>
+          <td>{{ car.regNo }}</td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

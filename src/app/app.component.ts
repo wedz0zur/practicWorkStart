@@ -7,7 +7,8 @@ import { NgClassComponent } from "./ng-class/ng-class.component";
 import { NgStyleComponent } from "./ng-style/ng-style.component";
 import { SignalComponent } from "./signal/signal.component";
 import { LinkSignalComponent } from "./link-signal/link-signal.component";
-import { AdminComponent } from "./admin/admin.component";
+import { GetApiComponent } from "./get-api/get-api.component";
+import { PostApiComponent } from "./post-api/post-api.component";
 
 @Component({
   selector: "app-root",
@@ -21,7 +22,8 @@ import { AdminComponent } from "./admin/admin.component";
     LinkSignalComponent,
     RouterOutlet,
     RouterLink,
-    AdminComponent
+    GetApiComponent,
+    PostApiComponent
   ],
   templateUrl: "./app.component.html",
   styleUrl: "./app.component.css",
