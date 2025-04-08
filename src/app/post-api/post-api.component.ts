@@ -39,10 +39,42 @@ export class PostApiComponent {
       .subscribe((res: any) => {
         if (res.id) {
           alert("Авто добавлено");
-        }else{
-          alert("Ошибка добавления")
+        } else {
+          alert("Ошибка добавления");
         }
         this.getCars();
+      });
+  }
+
+  editCar(data: any) {
+    this.carObj = data;
+
+    this.http
+      .put(
+        `https://67c966760acf98d0708a1df9.mockapi.io/cars/carList/${data.id}`,
+        this.carObj
+      )
+      .subscribe((res: any) => {
+        if (res.id) {
+          alert("Автомобиль изменён");
+        } else {
+          alert("Не получилось изменить авто");
+        }
+      });
+  }
+
+  deletCar(id: any) {
+    this.http
+      .delete(
+        `https://67c966760acf98d0708a1df9.mockapi.io/cars/carList/${id}`,
+        this.carObj
+      )
+      .subscribe((res: any) => {
+        if (res.id) {
+          alert("Автомобиль удалён");
+        } else {
+          alert("Не получилось удалить авто");
+        }
       });
   }
 }

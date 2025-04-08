@@ -10,71 +10,70 @@
           <label for="name" class="col-sm-3 control-label">Тип заказа</label>
           <div class="col-sm-9">
             <label class="radio-inline">
-                <input
+              <input
                 type="text"
                 [(ngModel)]="carObj.carId"
-                [ngModelOptions]="{standalone: true}"
+                [ngModelOptions]="{ standalone: true }"
                 id="inlineRadio1"
                 placeholder="Введите ID машины"
               />
-              
+
               <input
                 type="text"
                 [(ngModel)]="carObj.brand"
                 id="inlineRadio1"
                 placeholder="Введите марку"
-                [ngModelOptions]="{standalone: true}"
+                [ngModelOptions]="{ standalone: true }"
               />
-              
+
               <input
                 type="text"
                 [(ngModel)]="carObj.model"
                 id="inlineRadio1"
                 placeholder="Введите модель"
-                [ngModelOptions]="{standalone: true}"
+                [ngModelOptions]="{ standalone: true }"
               />
-              
+
               <input
                 type="text"
                 [(ngModel)]="carObj.year"
                 id="inlineRadio1"
                 placeholder="Введите год выпуска"
-                [ngModelOptions]="{standalone: true}"
+                [ngModelOptions]="{ standalone: true }"
               />
-              
+
               <input
                 type="text"
                 [(ngModel)]="carObj.color"
                 id="inlineRadio1"
                 placeholder="Введите цвет"
-                [ngModelOptions]="{standalone: true}"
+                [ngModelOptions]="{ standalone: true }"
               />
-              
+
               <input
                 type="text"
                 [(ngModel)]="carObj.dailyRate"
                 id="inlineRadio1"
                 placeholder="Введите ежедневную ставку"
-                [ngModelOptions]="{standalone: true}"
+                [ngModelOptions]="{ standalone: true }"
               />
-              
+
               <input
                 type="text"
                 [(ngModel)]="carObj.carImage"
                 id="inlineRadio1"
                 placeholder="Введите ссылку на изображение"
-                [ngModelOptions]="{standalone: true}"
+                [ngModelOptions]="{ standalone: true }"
               />
-              
+
               <input
                 type="text"
                 [(ngModel)]="carObj.regNo"
                 id="inlineRadio1"
                 placeholder="Введите регистрационный номер"
-                [ngModelOptions]="{standalone: true}"
+                [ngModelOptions]="{ standalone: true }"
               />
               <button (click)="addCar()">Добавить</button>
-              
             </label>
             <label class="radio-inline">
               <input
@@ -209,10 +208,24 @@
           <th>Color</th>
           <th>DailyRate</th>
           <th>RegNo</th>
+          <th>Image</th>
+          <th>Изменение</th>
         </tr>
       </thead>
       <tbody>
-        @for (car of carList; track $index){
+        @for (car of carList; track $index){ @if(car.openInput){
+        <tr>
+          <td><input type="text" [value]="car.brand" /></td>
+          <td><input type="text" [value]="car.brand" /></td>
+          <td><input type="text" [value]="car.brand" /></td>
+          <td><input type="text" [value]="car.brand" /></td>
+          <td><input type="text" [value]="car.brand" /></td>
+          <td><input type="text" [value]="car.brand" /></td>
+          <td><input type="text" [value]="car.brand" /></td>
+          <td><input type="text" [value]="car.brand" /></td>
+          <button class="btn btn-success" (click)="editCar(car)"></button>
+        </tr>
+        }@else{
         <tr>
           <td>{{ $index + 1 }}</td>
           <td>{{ car.carId }}</td>
@@ -222,7 +235,31 @@
           <td>{{ car.color }}</td>
           <td>{{ car.dailyRate }}</td>
           <td>{{ car.regNo }}</td>
+          <td><img width="100px" [src]="car.carImage" alt="" /></td>
+          <td>
+            <button class="btn btn-success" (click)="car.openInput = !car.openInput">
+              Изменить
+            </button>
+          </td>
+          <td>
+            <button class="btn btn-success" (click)="deletCar(car.id)">
+              Удалить
+            </button>
+          </td>
         </tr>
+        }
+
+        <!-- <tr>
+          <td><input type="text" /></td>
+          <td><input type="text" /></td>
+          <td><input type="text" /></td>
+          <td><input type="text" /></td>
+          <td><input type="text" /></td>
+          <td><input type="text" /></td>
+          <td><input type="text" /></td>
+          <td><input type="text" /></td>
+          <td><input type="text" /></td>
+        </tr> -->
         }
       </tbody>
     </table>
